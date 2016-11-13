@@ -13,7 +13,7 @@
         <div class="row well">
             <!--<div class="col-lg-2"></div>-->
             <div class="col-lg-8">
-                <h3 class="text-center text-primary">About</h3>
+                <h3 class="text-center text-primary">Life is Feudal</h3>
             </div>
             <div class="col-lg-4"></div>
         </div>
