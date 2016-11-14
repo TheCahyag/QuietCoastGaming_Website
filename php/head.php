@@ -16,7 +16,7 @@ echo '<meta name="viewport" content="width=device-width, initial-scale=1">'."\n"
 echo '<meta name="author" content="Brandon Bires-Navel">'."\n";
 echo '<title>QCG Gaming</title>'."\n";
 //echo '<link rel="icon" href="/images/emblem_24x24.png">'."\n"; todo
-echo '<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">'."\n";
+echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">'."\n";
 echo '<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js">'."\n";
 echo '<script src="../lib/js/jquery-3.0.0.min.js"></script>'."\n";
 echo '<link href="css/style.css" rel="stylesheet">'."\n";
