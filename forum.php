@@ -16,7 +16,7 @@
                 <h3 class="text-center text-primary">Forum (TODO)</h3>
                 <?php include ("php/forum/generate-forums.php") ?>
             </div>
-            <div class="col-lg-4"></div>
+            <div class="col-lg-2"></div>
         </div>
     </div>
 </div>

@@ -30,7 +30,7 @@
 
                 </p>
             </div>
-            <div class="col-lg-4"></div>
+            <div class="col-lg-2"></div>
         </div>
     </div>
 </div>
