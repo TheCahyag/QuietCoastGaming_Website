@@ -8,6 +8,7 @@
 class Forum {
     private $pathFrom_root, $fileName, $pathTo_data, $pathTo_file;
     private $threadCount, $postCount;
+    private $threadArray;
 
     /**
      * Forum constructor.
@@ -19,22 +20,24 @@ class Forum {
         $this->pathTo_data = $pathTo_data;
         $this->pathTo_file = $this->pathFrom_root.$fileName;
         $this->fileName = $fileName;
+        $blankArray = array();
+        $this->threadArray = new ArrayObject($blankArray);
         $this->threadCount = 0;
         $this->postCount = 0;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getThreadCount(){
-        return $this->threadCount;
+
+    public function createThread($name, $post){
+        $thread = new Thread("", $post);
+
     }
 
     /**
-     * @return mixed
+     * appendThread todo
+     * @param $thread - thread to append to a given forum
      */
-    public function getPostCount(){
-        return $this->postCount;
+    private function appendThread($thread){
+        $this->threadArray->append($thread);
     }
 
     /**
@@ -56,10 +59,8 @@ class Forum {
      * directory represents a thread
      * @return int
      */
-    private function countThreadCount(){
-        $numOfThreads = 0;
-        // todo
-        return $numOfThreads;
+    public function countThreadCount(){
+        return $this->threadArray->count();
     }
 
     /**
@@ -67,13 +68,11 @@ class Forum {
      * the number of files under all folders under the folder containing the entire forum thread.
      * @return int
      */
-    private function countPostCount(){
-        $numOfPosts = 0;
-        // todo
-        return $numOfPosts;
+    public function countPostCount(){
+        $total = 0;
+        foreach ($this->threadArray->getIterator() as $thread){
+            $total += $thread->getPostCount();
+        }
+        return $total;
     }
-
-
-
-
 }
