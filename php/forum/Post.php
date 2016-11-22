@@ -1,14 +1,20 @@
 <?php
-
-include ("../strip-tags-content.php"); // Striping HTML tags from given text
-
 /**
  * File: Post.php
  * @author: Brandon Bires-Navel (brandonnavel@outlook.com)
  */
-class Post{
+
+//namespace QuietCoastGaming\php;
+
+include ("../strip-tags-content.php"); // Striping HTML tags from given text
+
+/**
+ * Class Post
+ * @package QuietCoastGaming\php
+ */
+class Post {
     private $author, $content; // Strings
-    private $date; // int?
+    private $date; // String
 
     /**
      * Post constructor.
@@ -20,6 +26,27 @@ class Post{
         $this->author = $author;
         $this->content = $this->parseContent($content);
         $this->date = $date;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthor(){
+        return $this->author;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContent(){
+        return $this->content;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDate(){
+        return $this->date;
     }
 
     /**

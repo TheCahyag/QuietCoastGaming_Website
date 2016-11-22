@@ -3,7 +3,14 @@
  * File: Thread.php
  * @author: Brandon Bires-Navel (brandonnavel@outlook.com)
  */
-class Thread{
+
+//namespace QuietCoastGaming\php;
+
+/**
+ * Class Thread
+ * @package QuietCoastGaming\php
+ */
+class Thread {
     private $pathTo_threadFile, $title; // Strings
     private $postArray;
 
@@ -23,6 +30,13 @@ class Thread{
     }
 
     /**
+     * @return ArrayObject
+     */
+    public function getPostArray(){
+        return $this->postArray;
+    }
+
+    /**
      * @return int
      */
     public function getPostCount(){
@@ -35,6 +49,4 @@ class Thread{
     public function getTitle(){
         return $this->title;
     }
-
-
 }

@@ -1,5 +1,5 @@
 <?php
 /**
- * File: create-forums.php
+ * File: delete-forum.php
  * @author: Brandon Bires-Navel (brandonnavel@outlook.com)
  */

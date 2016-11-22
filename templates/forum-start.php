@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include ("../../../../php/head.php") ?>
+    <?php include ($_SERVER['DOCUMENT_ROOT'].'/php/head.php') ?>
 </head>
 <body>
 <!-- Sidebar -->
-<?php include ("../../../../php/menu.php") ?>
+<?php include ($_SERVER['DOCUMENT_ROOT'].'/php/menu.php') ?>
 
 <!-- Main content -->
 <div id="page-content-wrapper">

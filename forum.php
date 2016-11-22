@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include ("php/head.php") ?>
+    <?php include ($_SERVER['DOCUMENT_ROOT'].'/php/head.php') ?>
 </head>
 <body>
 <!-- Sidebar -->
-<?php include ("php/menu.php") ?>
+<?php include ($_SERVER['DOCUMENT_ROOT'].'/php/menu.php') ?>
 
 <!-- Main content -->
 <div id="page-content-wrapper">
@@ -13,8 +13,8 @@
         <div class="row well">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
-                <h3 class="text-center text-primary">Forum (TODO)</h3>
-                <?php include ("php/forum/generate-forums.php") ?>
+                <h3 class="text-center text-primary">Forums</h3>
+                <?php include ($_SERVER['DOCUMENT_ROOT'].'/php/forum/generate-forums.php') ?>
             </div>
             <div class="col-lg-2"></div>
         </div>

@@ -1,4 +1,11 @@
 Forum:
-pages of forums
-how to sort (newest first?)
-mark posts as done (lock them)?
+- pages of forums
+- how to sort (newest first?) nah prob newest last oldest first
+- mark posts as done (lock them)?
+- ways of deleteing forums and rearranging them
+- save data from new post so if anything goes wrong you display
+error message and then return the user to a data entry forum with
+his original data
+
+- need to check content for single and double quotes so they don't
+f up the scripts

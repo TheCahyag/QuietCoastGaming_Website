@@ -5,53 +5,63 @@
  * Meant to contain information pertinent to any given forum. And keeps track of
  * how many threads and posts are in the given forum.
  */
+
+include "../getNameForFile.php";
+
+//namespace QuietCoastGaming\php;
+
+/**
+ * Class Forum
+ * @package QuietCoastGaming\php
+ */
 class Forum {
     private $pathFrom_root, $fileName, $pathTo_data, $pathTo_file;
-    private $threadCount, $postCount;
     private $threadArray;
 
     /**
      * Forum constructor.
      * @param $fileName - name of the file associated with the forum (with extension)
-     * @param $pathTo_data - path to forum folder containing threads and posts
      */
-    public function __construct($fileName, $pathTo_data){
+    public function __construct($name){
         $this->pathFrom_root = "forum/pages/";
-        $this->pathTo_data = $pathTo_data;
-        $this->pathTo_file = $this->pathFrom_root.$fileName;
-        $this->fileName = $fileName;
+        $this->fileName = nameMe($name, '.php');
         $blankArray = array();
         $this->threadArray = new ArrayObject($blankArray);
-        $this->threadCount = 0;
-        $this->postCount = 0;
-    }
-
-
-    public function createThread($name, $post){
-        $thread = new Thread("", $post);
-
     }
 
     /**
-     * appendThread todo
-     * @param $thread - thread to append to a given forum
+     * @param $data - array: (All strings)
+     *              0 -> title (for thread)
+     *              1 -> name of user (for post)
+     *              2 -> date (for post)
+     *              3 -> content (for post)
      */
-    private function appendThread($thread){
+    public function createThread($data){
+        $post = new Post($data[1], $data[3], $data[2]);
+        $arrayForThread = array($data[0], "");
+        $thread = new Thread($arrayForThread, $post);
         $this->threadArray->append($thread);
     }
 
     /**
-     * validate resets count values to the actual value based on files
-     * This function should eventually be removed, but it might be good for the start
+     * @return String
      */
-    public function validate(){
-        $this->threadCount = $this->countThreadCount();
-        $this->postCount = $this->countPostCount();
-        /**
-         * todo
-         * thinking of returning bool to indicated whether there was any corrections that were
-         * made, probably good
-         */
+    public function getFileName(){
+        return $this->fileName;
+    }
+
+    /**
+     * @return ArrayObject
+     */
+    public function getThreadArray(){
+        return $this->threadArray;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPathFromRoot(){
+        return $this->pathFrom_root;
     }
 
     /**

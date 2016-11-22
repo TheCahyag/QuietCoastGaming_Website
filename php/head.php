@@ -19,4 +19,4 @@ echo '<title>QCG Gaming</title>'."\n";
 echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">'."\n";
 echo '<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js">'."\n";
 echo '<script src="../lib/js/jquery-3.0.0.min.js"></script>'."\n";
-echo '<link href="css/style.css" rel="stylesheet">'."\n";
+echo '<link href="http://www.quietcoastgaming.com/css/style.css" type="text/css" rel="stylesheet">'."\n";
