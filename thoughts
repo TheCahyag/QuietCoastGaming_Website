@@ -9,3 +9,5 @@ his original data
 
 - need to check content for single and double quotes so they don't
 f up the scripts
+
+- record ip when posts/threads are created

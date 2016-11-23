@@ -11,7 +11,9 @@
  * @package QuietCoastGaming\php
  */
 class Thread {
-    private $pathTo_threadFile, $title; // Strings
+    private $pathTo_threadFile, $title;
+
+    // Strings
     private $postArray;
 
     /**
@@ -24,9 +26,16 @@ class Thread {
     public function __construct($data, $firstPost){
         $this->title = $data[0];
         $this->pathTo_threadFile = $data[1];
-        $blankArray = array();
-        $this->postArray = new ArrayObject($blankArray);
+        $this->postArray = new ArrayObject(array());
         $this->postArray->append($firstPost);
+    }
+
+    /**
+     * @return Post - most recent post
+     */
+    public function getMostRecentPost(){
+        $numOfPosts = count($this->postArray);
+        return $this->postArray[$numOfPosts - 1];
     }
 
     /**
@@ -40,7 +49,7 @@ class Thread {
      * @return int
      */
     public function getPostCount(){
-        return $this->postArray->count();
+        return count($this->postArray);
     }
 
     /**
@@ -48,5 +57,12 @@ class Thread {
      */
     public function getTitle(){
         return $this->title;
+    }
+
+    /**
+     * @return String - path to the file representing the given thread
+     */
+    public function getPathToThreadFile(){
+        return $this->pathTo_threadFile;
     }
 }

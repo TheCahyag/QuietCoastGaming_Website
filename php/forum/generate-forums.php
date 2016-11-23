@@ -6,22 +6,33 @@
  * serve as an access point for people trying to get to the various forum pages
  */
 
+// Forum objects
+include ($_SERVER['DOCUMENT_ROOT']."/php/forum/Forum.php");
+include ($_SERVER['DOCUMENT_ROOT']."/php/forum/Thread.php");
+include ($_SERVER['DOCUMENT_ROOT']."/php/forum/Post.php");
+
+// HTML Tags
 echo '<table class="table table-hover">';
 echo '<thead><tr><th>Forum</th><th>Threads</th><th>Posts</th><th>Lastest</th></tr></thead>';
 echo '<tbody>';
-foreach (scandir("forum/data/serialized_forum_objects") as $forumFile){
-    $readFile = fopen("forum/data/serialized_forum_objects/".$forumFile, 'r');
-    $forumObject = unserialize(fgets($readFile));
-    echo $forumObject->getFileName();
-//
-//    $name = $forumObject->getPathFromRoot().$forumObject->getFileName();
-//    $threads = $forumObject->countThreadCount();
-//    $posts = $forumObject->countPostCount();
-//    $threadArray = $forumObject->getThreadArray();
-//    $postArray = $threadArray[0]->getPostArray();
-//    $latest = $postArray[0]->getDate();
-//    $forumURL = $forumObject->getPathFromRoot().$fileName.'php';
-//    $content .= '<tr><th><a href="'.$forumURL.'">'.$name.'</a></th><th>'
-//        .$threads.'</th><th>'.$posts.'</th><th>'.$latest.'</th></tr>';
+
+// Forum files that contain the serialized data
+$dirArray = scandir($_SERVER['DOCUMENT_ROOT']."/forum/data/serialized_forum_objects");
+unset($dirArray[0], $dirArray[1]); // Remove '.' and '..' from the array
+
+// Go through each forum file, un-serialize, and get data
+// about the forums to display on a web page
+foreach ($dirArray as $forumFile){
+    $readFile = fopen($_SERVER['DOCUMENT_ROOT']."/forum/data/serialized_forum_objects/".$forumFile, 'r');
+    $data = file_get_contents($_SERVER['DOCUMENT_ROOT']."/forum/data/serialized_forum_objects/".$forumFile);
+    $forumObject = unserialize($data);
+    $name = $forumObject->getName();
+    $threads = $forumObject->countThreadCount();
+    $posts = $forumObject->countPostCount();
+    $threadArray = $forumObject->getThreadArray();
+    $postArray = $threadArray[0]->getPostArray();
+    $latest = $postArray[0]->getDate();
+    $forumURL = $forumObject->getPathFromRoot().$name;
+    echo '<tr><th><a href="'.$forumURL.'">'.$name.'</a></th><th>'.$threads.'</th><th>'.$posts.'</th><th>'.$latest.'</th></tr>';
 }
-echo '</tbody></table>';
+echo '</tbody></table>'; // Other HTML tags

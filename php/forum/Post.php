@@ -6,7 +6,7 @@
 
 //namespace QuietCoastGaming\php;
 
-include ("../strip-tags-content.php"); // Striping HTML tags from given text
+include ($_SERVER['DOCUMENT_ROOT']."/php/strip-tags-content.php"); // Striping HTML tags from given text
 
 /**
  * Class Post

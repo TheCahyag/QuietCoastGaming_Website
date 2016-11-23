@@ -28,7 +28,7 @@ $postCount2 = $threadArray[0]->getPostCount();
 echo "Name of Thread: ".$nameOfThread." (Should be What is your favorite color?)</br>";
 echo "Posts: ".$postCount2." (Should be 1)</br>";
 
-echo $_SERVER['DOCUMENT_ROOT'].'\css\style.css';
+//echo $_SERVER['DOCUMENT_ROOT'].'\css\style.css';
 
 $dir = '../../forum/data/serialized_forum_objects/object';
 $file = fopen($dir, 'w');

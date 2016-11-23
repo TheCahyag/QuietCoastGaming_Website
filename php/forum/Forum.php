@@ -6,7 +6,7 @@
  * how many threads and posts are in the given forum.
  */
 
-include "../getNameForFile.php";
+include $_SERVER['DOCUMENT_ROOT']."/php/getNameForFile.php";
 
 //namespace QuietCoastGaming\php;
 
@@ -15,18 +15,18 @@ include "../getNameForFile.php";
  * @package QuietCoastGaming\php
  */
 class Forum {
-    private $pathFrom_root, $fileName, $pathTo_data, $pathTo_file;
+    private $pathFrom_root, $name, $fileName, $pathTo_data, $pathTo_file;
     private $threadArray;
 
     /**
      * Forum constructor.
-     * @param $fileName - name of the file associated with the forum (with extension)
+     * @param $name - name of the forum
      */
     public function __construct($name){
         $this->pathFrom_root = "forum/pages/";
+        $this->name = $name;
         $this->fileName = nameMe($name, '.php');
-        $blankArray = array();
-        $this->threadArray = new ArrayObject($blankArray);
+        $this->threadArray = new ArrayObject(array());
     }
 
     /**
@@ -48,6 +48,13 @@ class Forum {
      */
     public function getFileName(){
         return $this->fileName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName(){
+        return $this->name;
     }
 
     /**
