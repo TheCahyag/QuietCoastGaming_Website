@@ -35,10 +35,11 @@ class Forum {
      *              1 -> name of user (for post)
      *              2 -> date (for post)
      *              3 -> content (for post)
+     *              4 -> dirToData
      */
     public function createThread($data){
         $post = new Post($data[1], $data[3], $data[2]);
-        $arrayForThread = array($data[0], "");
+        $arrayForThread = array($data[0], $data[4]);
         $thread = new Thread($arrayForThread, $post);
         $this->threadArray->append($thread);
     }

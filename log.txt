@@ -1,0 +1,89 @@
+commit 3a3f9af929598f05424e217e0e2b57c7ebf62896
+Author: Brandon Bires-Navel <brandonnavel@outlook.com>
+Date:   Tue Nov 15 16:02:17 2016 -0500
+
+    Added:
+        - Post.php (Class)
+        - Thread.php (Class)
+        - forum-end.php
+        - forum-start.php
+    
+    Implemented:
+       - Fixed column sizes in some pages
+       - forum-end and start are used for creating generic forum pages
+       - Created Thread object that contains information about its posts
+       - Keeps track of all of its children Posts
+       - Created Post object that contains information about the post
+
+commit 2f21ef5891ccb2e2ec615ec34483cea1345c4cdd
+Author: Brandon Bires-Navel <brandonnavel@outlook.com>
+Date:   Mon Nov 14 16:39:33 2016 -0500
+
+    Added:
+        - create-forums.php
+        - delete-forums.php
+        - Forum.php (Class)
+        - generate-forums.php
+        - constants.php
+        - controlpanel.php (Webpage)
+    
+    Implemented:
+        - style.css: added style for hovering over table rows in tables
+        - Forum.php: constructor, getters, setters, validate function
+        - generate-forums.php: creates the entire table that is put in forum.php
+        - constants.php: contains file directories
+         - head.php: updated bootstrap url
+         - menu.php: made a separate forum page that contains all forums for different games rather then having a submenu for each game that has a forum
+
+commit 808db43e7ffeddf92a664177ac1194167102d765
+Author: Brandon Bires-Navel <brandonnavel@outlook.com>
+Date:   Sun Nov 13 22:26:22 2016 -0500
+
+    Added:
+        - LiF_Form.php
+    
+    Implemented:
+        - Changed file structure of the website, made all page items under
+           the main dir instead of in a separate folder
+        - Default page on LiF_Forum.php
+        - Changed menu.php to display sub pages as a list element of an unordered list of pages
+    
+    Deleted:
+        - constrants.php: Was intending to use it as a file for directories, but I currently don't need it
+
+commit 7e28236980c229faef055c0ac0ecd5ae51fef8ad
+Author: Brandon Bires-Navel <brandonnavel@outlook.com>
+Date:   Sun Nov 13 18:23:16 2016 -0500
+
+    Added:
+        - LiF.php
+        - webpage.php (template)
+    
+    Implemented:
+        - Alerted menu to have sub roots (LiF -> LiF Rules)
+        - Set index, about and LiF.php to just titles
+
+commit 6ccde07485e25fd85176952c68fb68b616bbda42
+Author: Brandon Bires-Navel <brandonnavel@outlook.com>
+Date:   Sun Nov 13 17:09:47 2016 -0500
+
+    Added:
+        - style.css
+        - jquery library
+        - about.php (no content)
+        - index.php (incorrect content)
+        - LiF_Rules.php
+        - constatns.php (nothing yet)
+        - head.php
+        - menu.php
+    
+    Implemented:
+        - Added rules for LiF
+        - Set head attributes
+        - Set up operation menu
+
+commit 87625452606ef15e6965c9fbd62ff3f7b9c86928
+Author: Brandon Bires-Navel <TheCahyag@users.noreply.github.com>
+Date:   Sun Nov 13 15:11:20 2016 -0500
+
+    Initial commit

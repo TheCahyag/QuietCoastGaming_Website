@@ -15,6 +15,7 @@ include ($_SERVER['DOCUMENT_ROOT']."/php/strip-tags-content.php"); // Striping H
 class Post {
     private $author, $content; // Strings
     private $date; // String
+    private $authorIP;
 
     /**
      * Post constructor.

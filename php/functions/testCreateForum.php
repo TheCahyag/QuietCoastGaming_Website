@@ -1,8 +1,8 @@
 <?php
 
-include ("Forum.php");
-include ("Post.php");
-include ("Thread.php");
+include("Forum.php");
+include("Post.php");
+include("Thread.php");
 
 // Create forum and add thread to it
 

@@ -14,7 +14,7 @@
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
                 <h3 class="text-center text-primary">Forums</h3>
-                <?php include ($_SERVER['DOCUMENT_ROOT'].'/php/forum/generate-forums.php') ?>
+                <?php include($_SERVER['DOCUMENT_ROOT'] . '/php/functions/generate-forums.php') ?>
             </div>
             <div class="col-lg-2"></div>
         </div>

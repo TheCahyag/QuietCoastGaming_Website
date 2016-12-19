@@ -1,7 +1,12 @@
 <?php
 /**
+ * File: strip-tags-content.php
+ * @author: mariusz.tarnaski at wp dot pl
  * Courtesy of 'mariusz.tarnaski at wp dot pl'
  * http://php.net/manual/en/function.strip-tags.php#86964
+ */
+
+/**
  * @param $text
  * @param string $tags
  * @param bool $invert

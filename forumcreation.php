@@ -13,7 +13,7 @@
         <div class="container-fluid">
             <div class="row well">
                 <div class="col-lg-6">
-                    <form action="php/forum/create-forum.php" method="get">
+                    <form action="php/functions/create-forum.php" method="get">
                         <label for="name">Forum Name:</label>
                         <input type="text" class="form-control" id="name" name="name"/>
                         <div class="text-center" style="padding-top: 10px">

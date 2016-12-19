@@ -11,3 +11,8 @@ his original data
 f up the scripts
 
 - record ip when posts/threads are created
+- and make it so you can ban ips so they can't post anywhere
+- limit to how many threads/posts you can have to prevent spam
+
+all of the redirects should more specifically send the user instead
+of just redirecting to the forum
