@@ -50,7 +50,7 @@ $content = '
 </head>
 <body>
 <!-- Sidebar -->
-<?php include ($_SERVER[\'DOCUMENT_ROOT\'].\'/php/menuForum.php\') ?>
+<?php include ($_SERVER[\'DOCUMENT_ROOT\'].\'/php/menu.php\') ?>
 
 <!-- Main content -->
 <?php $myData = $_SERVER[\'DOCUMENT_ROOT\']."/forum/data/serialized_forum_objects/'.$nameWithoutExtension.'";
@@ -84,5 +84,5 @@ $content = '
 fwrite($forumFile, $content);
 fclose($forumFile);
 
-// Redirect
+// Redirect todo
 echo '<script>t1 = window.setTimeout(function(){ window.location = "http://quietcoastgaming.com/forum.php"; },1);</script>';

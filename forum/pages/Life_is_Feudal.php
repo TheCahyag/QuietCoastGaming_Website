@@ -6,7 +6,7 @@
 </head>
 <body>
 <!-- Sidebar -->
-<?php include ($_SERVER['DOCUMENT_ROOT'].'/php/menuForum.php') ?>
+<?php include ($_SERVER['DOCUMENT_ROOT'].'/php/menu.php') ?>
 
 <!-- Main content -->
 <?php $myData = $_SERVER['DOCUMENT_ROOT']."/forum/data/serialized_forum_objects/Life_is_Feudal";

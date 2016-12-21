@@ -1,7 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Brandon
- * Date: 11/22/16
- * Time: 10:50 PM
+ * File: generate-posts.php
+ * @author: Brandon Bires-Navel (brandonnavel@outlook.com)
  */
+

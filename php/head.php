@@ -6,6 +6,11 @@
  * stuff as well as the favicon. This is added to every page.
  */
 
+include ($_SERVER['DOCUMENT_ROOT']."/php/findRelativeDirectory.php");
+$dir = getcwd();
+
+$toRootDir = levelsToRoot($dir);
+
 /**
  * This is added to all HTML pages to easily add information that would be
  * included in the <head> part of the document.
@@ -18,5 +23,5 @@ echo '<title>QCG Gaming</title>'."\n";
 //echo '<link rel="icon" href="/images/emblem_24x24.png">'."\n"; todo
 echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">'."\n";
 echo '<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js">'."\n";
-echo '<script src="../lib/js/jquery-3.0.0.min.js"></script>'."\n";
-echo '<link href="http://www.quietcoastgaming.com/css/style.css" type="text/css" rel="stylesheet">'."\n";
+echo '<script src="'.$toRootDir.'lib/js/jquery-3.0.0.min.js"></script>'."\n";
+echo '<link href="'.$toRootDir.'css/style.css" type="text/css" rel="stylesheet">'."\n";

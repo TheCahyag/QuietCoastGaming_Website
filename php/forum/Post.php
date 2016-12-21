@@ -7,6 +7,7 @@
 //namespace QuietCoastGaming\php;
 
 include ($_SERVER['DOCUMENT_ROOT']."/php/strip-tags-content.php"); // Striping HTML tags from given text
+include ($_SERVER['DOCUMENT_ROOT']."/php/getUserIP.php");
 
 /**
  * Class Post
@@ -27,6 +28,7 @@ class Post {
         $this->author = $author;
         $this->content = $this->parseContent($content);
         $this->date = $date;
+        $this->authorIP = getUserIP();
     }
 
     /**

@@ -21,5 +21,5 @@ if (count($threadArray) > 0){
         echo '<tr><th><a href="'.$threadURL.'">'.$threadName.'</a></th><th>'.$posts.'</th><th>'.$latest.'</th></tr>';
     }
 } else {
-    echo 'There are no threads right now, start one by clicking the button in the corner.';
+    echo "There are zero threads right now, start one by clicking the 'Create Thread!' button.";
 }

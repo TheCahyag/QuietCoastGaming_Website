@@ -32,6 +32,9 @@
                     </form>
                 </div>
                 <div class="col-lg-6">
+                    <ul>
+                        <li>For any images you may use, upload them to <a target="_blank" href="http://imgur.com/">Imgur</a> and include the link in your post.</li>
+                    </ul>
                 </div>
             </div>
         </div>
