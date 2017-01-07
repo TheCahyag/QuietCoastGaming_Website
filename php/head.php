@@ -7,9 +7,8 @@
  */
 
 include ($_SERVER['DOCUMENT_ROOT']."/php/findRelativeDirectory.php");
-$dir = getcwd();
 
-$toRootDir = levelsToRoot($dir);
+$toRootDir = levelsToRoot(getcwd());
 
 /**
  * This is added to all HTML pages to easily add information that would be
@@ -21,7 +20,19 @@ echo '<meta name="viewport" content="width=device-width, initial-scale=1">'."\n"
 echo '<meta name="author" content="Brandon Bires-Navel">'."\n";
 echo '<title>QCG Gaming</title>'."\n";
 //echo '<link rel="icon" href="/images/emblem_24x24.png">'."\n"; todo
-echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">'."\n";
-echo '<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js">'."\n";
-echo '<script src="'.$toRootDir.'lib/js/jquery-3.0.0.min.js"></script>'."\n";
+
+echo '<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>';
+
+
+
+//echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">'."\n";
+//echo '<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>'."\n";
+//echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>'."\n";
 echo '<link href="'.$toRootDir.'css/style.css" type="text/css" rel="stylesheet">'."\n";

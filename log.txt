@@ -1,3 +1,99 @@
+commit 018a263b0bc6f8082d31a0567c24f5efe095382d
+Author: Brandon Bires-Navel <brandonnavel@outlook.com>
+Date:   Tue Dec 20 21:06:19 2016 -0500
+
+    Added:
+        - findRelativeDirectory.php
+        - threadtemplate.php
+    
+    Implemented:
+        - added a class in style.css for individual messages
+        - Post objects now save the ip of the person who created the post
+        - fixed some issues in create-thread.php, started to create the contents of the file for the thread
+        - findRelativeDirectory.php is a function that, given a directory, will return the path you need to take inorder to get to the root level of the project
+        - fixed directories in head.php and menu.php so it doesn't matter where the file is, it will be able to access the links to other files on the website
+        - When creating a post or thread I have started to add tips on how you can format text
+    
+    Deleted:
+        - constants.php turns out it doesn't look like I'm going to need this
+        - menuForum.php, headForum.php - the original files now dynamically set the links to other pages based on the file that is accessing the info from head and menu
+
+commit 07a04808cb655a8c0ce318e365595c95d86d8f52
+Author: Brandon Bires-Navel <brandonnavel@outlook.com>
+Date:   Mon Dec 19 12:25:45 2016 -0500
+
+    Added:
+        - create-thread.php
+        - getUserIP.php
+        - menuForum.php
+        - How does this website work.txt
+    
+    Implemented:
+        - Changed the Forum object so when it makes a thread it will store a directory to data file
+        - Post object logs the IP of the user who creates the post
+        - Edits and various error checking when creating a forum
+        - create-thread.php - finds Forum object and invokes the createThread() method
+        - Added an additional menu.php (menuForum.php) so when you are in the forum you can access the correct server locations
+        - Added a little bit to the control panel
+
+commit 7b2c16514e94ed776c7bad8ba4deec5196faf5d9
+Author: Brandon Bires-Navel <brandonnavel@outlook.com>
+Date:   Tue Nov 22 23:53:59 2016 -0500
+
+    Added:
+        - create-post.php
+        - create-thread.php
+        - delete-post.php
+        - delete-thread.php
+        - postcreation.php
+        - threadcreation.php
+    
+    Implemented:
+        - Fixed/Added/Edited some comments
+        - Made the Forum object and serialized it when creating a forum
+        - Finished editing what is put in the file when a new forum is created (still needs to be tested)
+        - Forum object now keeps track of its name, along with a getter function
+        - Finished (I think) generate-forum.php script (which looks through all the forums and adds rows to a table based on the forum info)
+        - Worked out a function to generate rows for a table which contain information about all threads in a given forum (generate-threads.php)
+        - Added a method for Thread objects to get the most recent post in a given thread and to get the file pathway to the given thread
+        - Most of the create/delete function scripts are empty atm, that is more of a visual todo for my sake
+
+commit 2a3f8f5091e0907bffda3114e55f7c0dfebdc731
+Author: Brandon Bires-Navel <brandonnavel@outlook.com>
+Date:   Tue Nov 22 02:10:20 2016 -0500
+
+    Added:
+        - testCreateForum.php (a test that creates a forum)
+        - getNameForFile.php
+        - forumcreation.php
+    
+    Implemented:
+        - create-forum.php: gets called from forumcreation.php and will have a name in the _GET var named 'name' it parses the name into a filename creates that file, makes a directory for the threads to be stored in and adds html stuff to fill up the page which isn't correct right now because it searches forums and not threads, so I gotta fix that.
+        - configured the filename of the forum in the constructor in Forum.php along with some getter functions
+        - Worked on generate-forums.php since I already had that code from create-forum (which was incorrect, but works here) and am currently working on getting the objects to work after being serialized. Doesn't currently work
+        - Added getter functions in Post.php, made it possible to access the author, content, and date of a given post which should prove useful when I look at the most recent post and need to get the date of it
+        - Added getter functions in Thread.php, made it possible to access the array of posts a thread holds (to find the most recent post)
+        - getNameForFile.php is a function that will be used to take a name of a given forum/thread and parse it to be an acceptable file name
+        - Made webpages look for the style sheet at a http link instead of a link that was based on the file system
+        - Changed a bunch of include statements to incorporate the DOCUMENT_ROOT var under the _SERVER var array
+        - forumcreation.php is the page that will initiate the creation of a forum, it's just a text box and a button that runs create-forum.php with the text from the textbox
+
+commit f4ed409d2aa72dcea1a278499fe46f959cddc21b
+Author: Brandon Bires-Navel <brandonnavel@outlook.com>
+Date:   Sat Nov 19 11:08:16 2016 -0500
+
+    Added:
+        - strip-tags-content.php (function from online)
+    
+    Implemented:
+        - Forum.php
+            - getThreadCount() and getPostCount() were deleted and replaced with methods that used the list of Threads and Posts to obtain data
+            - methods (createThread, appendThread) to create a new thread (still needs work)
+        - Thread.php
+            - Changed contructor to take in an array for various string data, and a post representing the first post.
+            - No longer keep track of first\mostrecent posts and now just keep all posts in a ArrayObject list. The first post is the first object in the list and the most recent post is the last object in the list.
+        - Removed extraneous <div> tags in various webpages and templates
+
 commit 3a3f9af929598f05424e217e0e2b57c7ebf62896
 Author: Brandon Bires-Navel <brandonnavel@outlook.com>
 Date:   Tue Nov 15 16:02:17 2016 -0500

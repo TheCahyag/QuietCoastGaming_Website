@@ -11,14 +11,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/php/forum/Post.php");
 
 
 // Changes unwanted chars to '_' or '-' for the file that will be created
-$fileName = str_replace(" ", "_", $_GET['name']);
-$fileName = str_replace(".", "-", $fileName);
-$fileName = str_replace(":", "_", $fileName);
-$fileName = str_replace("/", "_", $fileName);
-$fileName = str_replace("\\", "_", $fileName);
-$fileName = str_replace("*", "_", $fileName);
-$fileName = str_replace("<", "_", $fileName);
-$fileName = str_replace(">", "_", $fileName);
+$fileName = nameMe($_GET['name'], "");
 
 // Getting data
 $forumName = $_GET['name'];

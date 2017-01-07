@@ -5,6 +5,8 @@
  * Description: Generates the menu bar located on the left.
  */
 
+$toRootDir = levelsToRoot(getcwd());
+
 echo '<div id="sidebar-wrapper">';
 echo '<ul class="sidebar-nav">';
 //echo '<li><a href="/index.php"><img src="/images/emblem_24x24.png"></a></li>';

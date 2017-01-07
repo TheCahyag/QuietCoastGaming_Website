@@ -20,7 +20,7 @@
                         <textarea rows="14" class="form-control" id="content" name="content"></textarea>
                         <div class="row">
                             <div class="col-lg-3">
-                                <label for="author">Author:</label>
+                                <label for="author">In game name:</label>
                                 <input type="text" class="form-control" id="author" name="author"/>
                             </div>
                             <div class="col-lg-9"></div>

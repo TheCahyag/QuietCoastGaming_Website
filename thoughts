@@ -18,3 +18,7 @@ all of the redirects should more specifically send the user instead
 of just redirecting to the forum
 
 - need to fix the highlighting on the table rows under the forum page
+
+Things to improve upon the first release of the website:
+- Change creation pages to modals called by the same buttons that call
+the separate creation page (http://v4-alpha.getbootstrap.com/components/modal/#via-javascript)

@@ -10,7 +10,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/php/forum/Thread.php");
 include($_SERVER['DOCUMENT_ROOT'] . "/php/forum/Post.php");
 
 // Name function
-include($_SERVER['DOCUMENT_ROOT'] . "/php/getNameForFile.php");
+//include($_SERVER['DOCUMENT_ROOT'] . "/php/getNameForFile.php");
 
 // _GET: name, content, author, dataDir
 $name = $_GET['name'];
@@ -30,7 +30,7 @@ $nameWithoutExtension = pathinfo($forumObject->getFileName(), PATHINFO_FILENAME)
 $threadFileName = nameMe($name, ".php");
 
 // Dir of the thread file
-$dir = $_SERVER['DOCUMENT_ROOT'].'/forum/data/'.$nameWithoutExtension.'/'.$threadFileName;
+$dir = '../../forum/data/'.$nameWithoutExtension.'/'.$threadFileName;
 
 // Gathering data for the thread
 $dataForThread = array();
@@ -43,7 +43,7 @@ array_push($dataForThread, $dir);
 // Post and Thread are created by the Forum object with the createThread() method
 $forumObject->createThread($dataForThread);
 
-// Reserialize the changed Forum object
+// Re-serialize the changed Forum object
 $serialFile = fopen($_SERVER['DOCUMENT_ROOT']."/forum/data/serialized_forum_objects/".$nameWithoutExtension, 'w');
 fwrite($serialFile, serialize($forumObject));
 fclose($serialFile);
@@ -53,7 +53,6 @@ $threadFile = fopen($dir, 'w');
 
 // Web page HTML stuff
 $content = '
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +63,8 @@ $content = '
 <?php include ($_SERVER[\'DOCUMENT_ROOT\'].\'/php/menu.php\') ?>
 
 <!-- Main content -->
-<?php $myData = $_SERVER[\'DOCUMENT_ROOT\']."/forum/data/serialized_forum_objects/'.$nameWithoutExtension.'";
+<?php $serializedObject = $_SERVER[\'DOCUMENT_ROOT\']."/forum/data/serialized_forum_objects/'.$nameWithoutExtension.'";
+    $threadFile = \''.$dir.'\';
     include ($_SERVER[\'DOCUMENT_ROOT\']."/php/forum/Forum.php");
     include ($_SERVER[\'DOCUMENT_ROOT\']."/php/forum/Thread.php");
     include ($_SERVER[\'DOCUMENT_ROOT\']."/php/forum/Post.php");
@@ -74,16 +74,7 @@ $content = '
         <div class="row well">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
-            <h3 class="text-primary text-center">'.$_GET["name"]. '</h3>
-            
-            
-            <form action="../../../postcreation.php" method="get">
-                <input type="hidden" id="dataDir" name="dataDir" value="' .$_SERVER['DOCUMENT_ROOT'].'/forum/data/'.$fileName.'"/>
-                <button style="float: right" type="submit" class="btn btn-primary btn-xs">Reply</button>
-            </form>
-            
-            
-            
+                <?php include ($_SERVER[\'DOCUMENT_ROOT\']."/php/functions/generate-posts.php"); ?>
             </div>
             <div class="col-lg-2"></div>
             </div>
@@ -91,6 +82,9 @@ $content = '
     </div>
 </body>
 </html>';
+
+fwrite($threadFile, $content);
+fclose($threadFile);
 
 // Redirect todo
 echo '<script>t1 = window.setTimeout(function(){ window.location = "http://quietcoastgaming.com/forum.php"; },1);</script>';

@@ -4,19 +4,30 @@
  * @author: Brandon Bires-Navel (brandonnavel@outlook.com)
  */
 
-// Get Forum object
-$data = file_get_contents($_SERVER['DOCUMENT_ROOT']."/forum/data/serialized_forum_objects/Minecraft");
-echo $data;
-$forumObject = unserialize($data);
 
-$title = "Thread Title";
-$author = "TheCahyag";
-$date = "Monday Dec 18";
-$content = "Hi, I'm from planet minecraft. Can I have op";
-$dirToData = "/forum/Minecraft/tomake.php";
+function testingForums(){
+    // Get Forum object
+    $data = file_get_contents($_SERVER['DOCUMENT_ROOT']."/forum/data/serialized_forum_objects/Minecraft");
+    echo $data;
+    $forumObject = unserialize($data);
 
-$dataForThread = array($title, $author, $date, $content, $dirToData);
+    $title = "Thread Title";
+    $author = "TheCahyag";
+    $date = "Monday Dec 18";
+    $content = "Hi, I'm from planet minecraft. Can I have op";
+    $dirToData = "/forum/Minecraft/tomake.php";
 
-$forumObject->createThread($dataForThread);
+    $dataForThread = array($title, $author, $date, $content, $dirToData);
+
+    $forumObject->createThread($dataForThread);
+}
+
+/**
+ * Getting the post object array for a specific thread in a specific forum
+ */
+function quarryingPostArray(){
+
+}
+
 
 
