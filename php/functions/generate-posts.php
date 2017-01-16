@@ -4,6 +4,9 @@
  * @author: Brandon Bires-Navel (brandonnavel@outlook.com)
  */
 
+include_once ($_SERVER['DOCUMENT_ROOT']."/php/getUserIP.php");
+$userIP = getUserIP();
+
 // $serializedObject, $threadFile -- variables from thread file
 
 // Getting Forum object data
@@ -31,13 +34,23 @@ echo'
 <div class="row well-message">
     <div class="col-lg-3 messageSideBar">
         <div class="">
-            <h4 class="text-primary">'.$postList[0]->getAuthor().'</h4>
-            <form action="../../../postcreation.php" method="get">
+            <h4 class="text-primary">'.$postList[0]->getAuthor().'</h4>';
+if ($userIP == $postList[0]->getAuthorIP()){
+    echo '
+                    <form action="../../../php/functions/edit-post.php" method="get">
+                    <input type="hidden" id="dataDir" name="dataDir" value="' .$_SERVER['DOCUMENT_ROOT'].'/forum/data/'.$threadFile.'"/>
+                    <input type="hidden" id="postIndex" name="postIndex" value="0"/>
+                    <button style="float: right;" type="submit" class="btn btn-primary btn-xs">Edit</button>
+                    </form>';
+}
+echo'
+       <form action="../../../postcreation.php" method="get">
                 <input type="hidden" id="dataDir" name="dataDir" value="' .$_SERVER['DOCUMENT_ROOT'].'/forum/data/'.$threadFile.'"/>
+                <input type="hidden" id="postIndex" name="postIndex" value="0"/>
                 <button style="float: right;" type="submit" class="btn btn-primary btn-xs">Reply</button>
             </form>
         </div>
-        <p style="padding-top: 25px">This is a user selected message!</p>
+        <p><b>***</b></p>
     </div>
     
     <div class="col-lg-9 messageMessageBar">
@@ -54,9 +67,23 @@ for ($j = 1; $j < count($postList); $j++){
     <div class="row well-message">
         <div class="col-lg-3 messageSideBar">
             <div>
-                <h4 class="text-primary">'.$postList[$j]->getAuthor().'</h4>
+                <h4 class="text-primary">'.$postList[$j]->getAuthor().'</h4>';
+    if ($userIP == $postList[0]->getAuthorIP()){
+        echo '
+                <form action="../../../php/functions/edit-post.php" method="get">
+                <input type="hidden" id="dataDir" name="dataDir" value="' .$_SERVER['DOCUMENT_ROOT'].'/forum/data/'.$threadFile.'"/>
+                <input type="hidden" id="postIndex" name="postIndex" value="'.$j.'"/>
+                <button style="float: right;" type="submit" class="btn btn-primary btn-xs">Edit</button>
+                </form>';
+    }
+    echo'
+       <form action="../../../postcreation.php" method="get">
+                <input type="hidden" id="dataDir" name="dataDir" value="' .$_SERVER['DOCUMENT_ROOT'].'/forum/data/'.$threadFile.'"/>
+                <input type="hidden" id="postIndex" name="postIndex" value="'.$j.'"/>
+                <button style="float: right;" type="submit" class="btn btn-primary btn-xs">Reply</button>
+            </form>
             </div>
-            <p style="padding-top: 25px">This is a user selected message!</p>
+            <p><b>***</b></p>
         </div>
         
         <div class="col-lg-9">

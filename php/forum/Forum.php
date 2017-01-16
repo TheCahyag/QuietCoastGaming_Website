@@ -17,6 +17,7 @@ include $_SERVER['DOCUMENT_ROOT']."/php/getNameForFile.php";
 class Forum {
     private $pathFrom_root, $name, $fileName, $pathTo_data, $pathTo_file;
     private $threadArray;
+    private $nextThreadID;
 
     /**
      * Forum constructor.
@@ -27,6 +28,7 @@ class Forum {
         $this->name = $name;
         $this->fileName = nameMe($name, '.php');
         $this->threadArray = new ArrayObject(array());
+        $this->nextThreadID = 1;
     }
 
     /**
@@ -39,7 +41,7 @@ class Forum {
      */
     public function createThread($data){
         $post = new Post($data[1], $data[3], $data[2]);
-        $arrayForThread = array($data[0], $data[4]);
+        $arrayForThread = array($data[0], $data[4], $this->getNextThreadID());
         $thread = new Thread($arrayForThread, $post);
         $this->threadArray->append($thread);
     }
@@ -70,6 +72,38 @@ class Forum {
      */
     public function getPathFromRoot(){
         return $this->pathFrom_root;
+    }
+
+    /**
+     * Returns the ID for the next thread and then iterators the ID count for the next call
+     * @return string
+     */
+    public function getNextThreadID(){
+        $ID = null;
+        if ($this->nextThreadID < 10){
+            $ID = str_pad($this->nextThreadID, 3, '0', STR_PAD_LEFT);
+        } else if ($this->nextThreadID < 100){
+            $ID = str_pad($this->nextThreadID, 2, '0', STR_PAD_LEFT);
+        } else if ($this->nextThreadID < 1000){
+            $ID = $this->nextThreadID;
+        }
+        $this->nextThreadID++;
+        return $ID;
+    }
+
+    /**
+     * @return string
+     */
+    public function peekAtNextThreadID(){
+        $ID = null;
+        if ($this->nextThreadID < 10){
+            $ID = str_pad($this->nextThreadID, 3, '0', STR_PAD_LEFT);
+        } else if ($this->nextThreadID < 100){
+            $ID = str_pad($this->nextThreadID, 2, '0', STR_PAD_LEFT);
+        } else if ($this->nextThreadID < 1000){
+            $ID = $this->nextThreadID;
+        }
+        return $ID;
     }
 
     /**

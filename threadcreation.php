@@ -34,6 +34,15 @@
                 <div class="col-lg-6">
                     <ul>
                         <li>For any images you may use, upload them to <a target="_blank" href="http://imgur.com/">Imgur</a> and include the link in your post.</li>
+                        <li>Formatting Text:
+                            <ul>
+                                <li>&lt;b&gt;<b>Bold Text</b>&lt;/b&gt;</li>
+                                <li>&lt;u&gt;<u>Underline Text</u>&lt;/u&gt;</li>
+                                <li>&lt;i&gt;<i>Italic Text</i>&lt;/i&gt;</li>
+                                <li>&lt;s&gt;<s>Strike Through Text</s>&lt;/s&gt;</li>
+                            </ul>
+
+                        </li>
                     </ul>
                 </div>
             </div>

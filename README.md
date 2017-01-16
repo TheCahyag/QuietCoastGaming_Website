@@ -1,1 +1,1 @@
-# QuietCoastGaming_Website
+# QuietCoastGaming Website

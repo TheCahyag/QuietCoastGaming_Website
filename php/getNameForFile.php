@@ -21,5 +21,7 @@ function nameMe($name, $extension){
     $fileName = str_replace("*", "_", $fileName);
     $fileName = str_replace("<", "_", $fileName);
     $fileName = str_replace(">", "_", $fileName);
+    $fileName = str_replace("'", "", $fileName);
+    $fileName = str_replace("\"", "", $fileName);
     return $fileName.$extension;
 }

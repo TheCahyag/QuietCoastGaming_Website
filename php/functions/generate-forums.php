@@ -23,7 +23,6 @@ unset($dirArray[0], $dirArray[1]); // Remove '.' and '..' from the array
 // Go through each forum file, un-serialize, and get data
 // about the forums to display on a web page
 foreach ($dirArray as $forumFile){
-
     $readFile = fopen($_SERVER['DOCUMENT_ROOT']."/forum/data/serialized_forum_objects/".$forumFile, 'r');
     $data = file_get_contents($_SERVER['DOCUMENT_ROOT']."/forum/data/serialized_forum_objects/".$forumFile);
     $forumObject = unserialize($data);
@@ -34,7 +33,7 @@ foreach ($dirArray as $forumFile){
     if (count($threadArray) > 0){
         if ($threadArray[0]->getPostArray() != null){
             $postArray = $threadArray[0]->getPostArray();
-            $latest = $postArray[0]->getDate();
+            $latest = $postArray[count($postArray) - 1]->getDate();
         } else { $latest = "N-A"; }
     } else { $latest = "N/A"; }
     $nameWithoutExtension = pathinfo($forumObject->getFileName(), PATHINFO_FILENAME);

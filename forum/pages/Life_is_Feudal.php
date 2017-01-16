@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,13 +20,13 @@
             <div class="col-lg-8">
             <h3 class="text-primary text-center">Life is Feudal</h3>
             <form action="../../threadcreation.php" method="get">
-                <input type="hidden" id="dataDir" name="dataDir" value="/Users/Brandon/Dropbox/College/Programming/Websites/QuietCoastGaming_Website/forum/data/Life_is_Feudal"/>
+                <input type="hidden" id="dataDir" name="dataDir" value="C:/Users/MOUTH Box/Dropbox/College/Programming/Websites/QuietCoastGaming_Website/forum/data/Life_is_Feudal"/>
                 <button style="float: right" type="submit" class="btn btn-primary btn-xs">Create Thread!</button>
             </form>
             <table class="table table-hover">
             <thead><tr><th>Thread</th><th>Posts</th><th>Latest</th></tr></thead>
             <tbody>
-            <?php include($_SERVER['DOCUMENT_ROOT'] . "/php/functions/generate-threads.php") ?>
+            <?php include ($_SERVER['DOCUMENT_ROOT']."/php/functions/generate-threads.php") ?>
             </tbody></table>
             </div>
             <div class="col-lg-2"></div>

@@ -19,6 +19,8 @@
                     <li>The most recent post is not correctly displayed, it seems it's just reading the time of the
                         first post in the post object array, alternatively (less likely) the list itself could be
                         sorting itself differently than expected.</li>
+                    <li>What the actual fuck is wrong with the dataDir
+                        <blockquote>C:/Users/MOUTH Box/Dropbox/College/Programming/Websites/QuietCoastGaming_Website/forum/data/../../forum/data/Minecraft/testing_breaks.php</blockquote><footer>Shits retarded yo ^</footer></li>
                 </ul>
                 <h1 class="text-primary">To Future:</h1>
                 <ul>

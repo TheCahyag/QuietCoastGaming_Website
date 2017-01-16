@@ -27,7 +27,9 @@ $forumObject = unserialize($data);
 $nameWithoutExtension = pathinfo($forumObject->getFileName(), PATHINFO_FILENAME);
 
 // Name of the thread
-$threadFileName = nameMe($name, ".php");
+$threadID = $forumObject->peekAtNextThreadID();
+$threadFileName = $threadID.nameMe($name, ".php");
+
 
 // Dir of the thread file
 $dir = '../../forum/data/'.$nameWithoutExtension.'/'.$threadFileName;
