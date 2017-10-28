@@ -7,15 +7,9 @@ The core functionality of the website revolves around three php object:
 - Thread.php
 - Post.php
 
-These three objects have a hierarchical relation ship.
-                            Forum
-                              |
-                              V
-                            Thread
-                              |
-                              V
-                             Post
-
+These three objects have a hierarchical relation ship:  
+Forum -0...\*-> Thread -0...\*-> Post  
+  
 A forum object is created when the site admin requests a new forum to be created via forumcreation.php.
 That object's is initialized and its state is modified to preference, it is then serialized and that
 information is stored in /forum/data/serialized_forum_objects. Each file in there represents a different forum.
